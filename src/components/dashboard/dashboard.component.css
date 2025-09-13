@@ -1,7 +1,7 @@
 .dashboard-container {
     font-family: 'Poppins', sans-serif;
-    background: #f9f9f9;
-    padding: 15px;
+    background: #fff;
+    padding: 20px 80px;
 }
 
 
@@ -31,7 +31,8 @@
                 padding-left: 10px;
                 border: none;
             }
-            .form-control:focus{
+
+            .form-control:focus {
                 box-shadow: none;
             }
         }
@@ -73,7 +74,7 @@
         background-clip: text;
         /* for Firefox */
         color: transparent;
-         font-size: 24px;
+        font-size: 24px;
         font-weight: 600;
     }
 
@@ -208,6 +209,16 @@
                     }
                 }
 
+            }
+
+            .posi {
+                position: relative;
+
+                .downarrow {
+                    position: absolute;
+                    right: 10px;
+                    top: 5px;
+                }
             }
 
             .continue-btn {
@@ -360,6 +371,9 @@
         font-weight: 400;
         color: var(--Secondary-50, #FFF8ED);
 
+    }
+    .pointer-1{
+        cursor: pointer;
     }
 }
 

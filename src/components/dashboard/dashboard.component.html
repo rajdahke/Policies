@@ -1,7 +1,4 @@
-<div class="dashboard-container">
-
-
-
+<div *ngIf="!viewDetails" class="dashboard-container">
     <!-- Product Quote Section -->
     <div class="quote-section">
         <div class="top-row">
@@ -175,7 +172,10 @@
                             </svg>
                         </span>Non Par</button>
                 </div>
-                <div class="form-group">
+                <div class="form-group posi">
+                    <div class="downarrow">
+                        <img src="../../assets/icons/downarrow.svg">
+                    </div>
                     <select class="form-control select">
                         <option selected value="" hidden>Choose product</option>
                         <option>eTouch</option>
@@ -184,7 +184,7 @@
                     </select>
                 </div>
 
-                <button class="continue-btn">
+                <button (click)="viewDetail()" class="continue-btn">
                     Continue
                 </button>
             </div>
@@ -241,9 +241,9 @@
                             Get recommendations basis on your customer profile
                         </div>
                     </div>
-                    <button mat-icon-button color="accent">
-                        <mat-icon>arrow_forward</mat-icon>
-                    </button>
+                    <div>
+                        <img class="pointer-1" src="../../assets/icons/uparrow.svg">
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,13 +256,13 @@
             <a href="#">View All</a>
         </div>
         <div class="quote-cards">
-            <div *ngFor="let item of [1,2,3,4,5,6,7]" class="quote-card">
+            <div *ngFor="let item of quotes" class="quote-card">
                 <div class="card-content">
                     <div><img class="curve-image" src="../../assets/icons/Group 37814.svg"></div>
                     <img src="../../assets/icons/userIcon.svg" class="quote-img" />
                     <div>
-                        <div class="name">Vidisha A.</div>
-                        <div class="phone">997166618</div>
+                        <div class="name">{{item?.name}}</div>
+                        <div class="phone">{{item?.number}}</div>
                     </div>
                 </div>
                 <div class="button-align">
@@ -315,4 +315,8 @@
 
         </div>
     </div>
+</div>
+
+<div *ngIf="viewDetails" class="dashboard-container">
+    <app-plan-details (viewDetails)="viewDetail()"></app-plan-details>
 </div>

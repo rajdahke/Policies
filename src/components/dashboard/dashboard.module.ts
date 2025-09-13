@@ -2,29 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { PlanDetailsComponent } from '../plan-details/plan-details.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatOptionModule } from '@angular/material/core';
-import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    PlanDetailsComponent
   ],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
     MatIconModule,
-    MatOptionModule,
-    MatInputModule,
+    FormsModule,
     RouterModule.forChild([
       { path: '', component: DashboardComponent }
     ])

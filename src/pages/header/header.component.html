@@ -1,10 +1,19 @@
+<div class="header-container">
     <div class="header-bar">
         <div class="logo-space"></div>
-        <div class="user-info">
+        <div class="user-info" #dropdownRef (click)="toggleDropdown()">
             <img src="../../assets/logos/User 07b.svg" class="profile-img" />
             <div>
                 <div class="user-name">Shubham Sachdeva</div>
                 <div class="user-role">Sales representative</div>
             </div>
+            <img class="dropArrow" src="../../assets/icons/downarrow.svg">
+            <div class="dropdown" *ngIf="isOpen">
+                <p class="dropMenu">My Profile</p>
+                 <p class="dropMenu">Logout</p>
+            </div>
         </div>
+
+
     </div>
+</div>
